@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "name": "YouTube Recommendation Blocker",
+    "version": "1.0",
+    "description": "Blocks YouTube recommendations on the homepage when switched on.",
+    "permissions": [
+      "activeTab",
+      "storage",
+      "declarativeContent"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "index.html"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://www.youtube.com/*"],
+        "js": ["content.js"]
+      }
+    ]
+  }
